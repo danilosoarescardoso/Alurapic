@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ titulo }}</h1>
-    <li v-for="foto of fotos">
+    <li v-for="foto of fotos" :key="foto">
       <img :src="foto.url" :alt="foto.titulo">
     </li>
   </div>
@@ -12,17 +12,12 @@ export default {
   data(){
     return{
       titulo: 'Alurapic', 
-      fotos:[
-        {
-        url: 'https://www.torcedores.com/content/uploads/2017/11/palmeiras1-1.jpg',
-        titulo: 'cachorro'
-      }, 
-      {
-        url: 'https://www.torcedores.com/content/uploads/2017/11/palmeiras1-1.jpg',
-        titulo: 'cachorro'
-      }
-      ]
+      fotos:[]
     }
+  },
+
+  created(){
+    alert('Criei o componente');
   }
 }
 </script>

@@ -4,14 +4,23 @@
     <ul class="lista-fotos">
       <li class="lista-fotos-item" v-for="foto of fotos" :key="foto">
 
-        
+        <meu-painel :titulo="foto.titulo">
+          <img class="imagem-responsiva" :src="foto.url" :alt="foto.titulo">
+        </meu-painel>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Painel from './components/shared/painel/Painel.vue';
+
 export default {
+
+  components:{
+    'meu-painel': Painel
+  },
+
   data(){
     return{
       titulo: 'Alurapic', 
@@ -28,7 +37,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .corpo{
   font-family: Helvetica, sans-serif;
@@ -50,7 +59,5 @@ export default {
   .imagem-responsiva{
     width: 100%;
   }
-
- 
 
 </style>
